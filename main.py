@@ -2,6 +2,7 @@ import sys
 import requests
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QComboBox, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QTextBrowser, QTableWidget, QTableWidgetItem
 
+
 class CurrencyConverterApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -55,7 +56,7 @@ class CurrencyConverterApp(QMainWindow):
         data = response.json()
         self.base_currency = data["base"]
         self.rates = data["rates"]
-        self.rates["RUB"] = 1.0  # Добавляем RUB с курсом 1.0
+        self.rates["RUB"] = 1.0
 
     def update_currency_table(self):
         self.currency_table.setRowCount(0)
